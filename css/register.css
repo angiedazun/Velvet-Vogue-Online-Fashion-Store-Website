@@ -1,0 +1,132 @@
+/* ===================================================
+   REGISTER.CSS — Registration Page Specific Styles
+   Velvet Vogue Fashion Store
+=================================================== */
+
+/* ── Inherits auth-page / auth-card from login.css ─ */
+
+/* ── Register Benefits Column ─────────────────── */
+.auth-benefits-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--dark) 0%, #3d1a6e 100%);
+    border-radius: 28px;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.auth-benefits-col::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.2);
+    top: -100px; right: -100px;
+}
+
+.auth-benefits-col::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(108,52,131,0.3);
+    bottom: -60px; left: -60px;
+}
+
+.benefits-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.benefits-subtitle { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+
+.benefits-list { list-style: none; padding: 0; margin: 0 0 32px; }
+
+.benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+}
+
+.benefits-list li:last-child { border-bottom: none; }
+
+.benefits-icon {
+    width: 36px; height: 36px; min-width: 36px;
+    border-radius: 10px;
+    background: rgba(212,175,55,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.benefits-list li strong { display: block; color: white; margin-bottom: 2px; font-size: 13px; }
+
+/* ── Two-Column Form Layout ───────────────────── */
+.form-row-half { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ── Password Strength ────────────────────────── */
+.password-strength-wrap { margin-top: 10px; }
+.strength-bar-track { height: 5px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.strength-bar-fill  { height: 100%; border-radius: 999px; transition: width 0.4s, background 0.4s; width: 0; }
+
+.strength-bar-fill.strength-0 { width: 0; }
+.strength-bar-fill.strength-1 { width: 25%; background: #e74c3c; }
+.strength-bar-fill.strength-2 { width: 50%; background: #f39c12; }
+.strength-bar-fill.strength-3 { width: 75%; background: #3498db; }
+.strength-bar-fill.strength-4 { width: 100%; background: #27ae60; }
+
+.strength-label { font-size: 11px; margin-top: 5px; font-weight: 600; }
+.strength-label.strength-1 { color: #e74c3c; }
+.strength-label.strength-2 { color: #f39c12; }
+.strength-label.strength-3 { color: #3498db; }
+.strength-label.strength-4 { color: #27ae60; }
+
+.strength-rules { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+
+.strength-rule {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11px; color: var(--text-muted);
+    padding: 3px 8px; border-radius: 20px;
+    background: var(--light);
+    transition: all 0.25s;
+}
+
+.strength-rule i { font-size: 10px; }
+.strength-rule.met { background: #e8f8f5; color: #1e8449; }
+.strength-rule.met i { color: #27ae60; }
+
+/* ── Password Match Indicator ─────────────────── */
+.confirm-match-msg { font-size: 11px; margin-top: 6px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.confirm-match-msg.match   { color: #27ae60; }
+.confirm-match-msg.no-match { color: #e74c3c; }
+
+/* ── Terms ────────────────────────────────────── */
+.terms-check-wrap {
+    padding: 12px 16px;
+    background: var(--light);
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    transition: border-color 0.2s;
+}
+
+.terms-check-wrap.agreed { border-color: rgb(39 174 96 / 50%); background: #f0fbf6; }
+
+.form-check-input-vv { width: 18px; height: 18px; border-radius: 5px; border: 2px solid var(--border); cursor: pointer; accent-color: var(--primary); }
+
+.terms-text { font-size: 12.5px; color: var(--text-muted); }
+.terms-text a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.terms-text a:hover { text-decoration: underline; }
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 767px) { .form-row-half { grid-template-columns: 1fr; } }

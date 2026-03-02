@@ -1,0 +1,400 @@
+/* ===================================================
+   ORDERS.CSS — My Orders Page
+   Velvet Vogue Fashion Store
+=================================================== */
+
+/* Filter Tabs */
+.orders-filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.orders-filter-btn {
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    background: white;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.orders-filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.orders-filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.filter-count {
+    background: rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 10px;
+}
+
+.orders-filter-btn.active .filter-count { background: rgba(255,255,255,0.3); }
+.orders-filter-btn:not(.active) .filter-count { background: var(--light); color: var(--text-muted); }
+
+/* Orders List */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+
+.order-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); }
+
+.order-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--light);
+}
+
+.order-number {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--primary);
+    font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.order-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.order-status-badge {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.order-status-badge.large {
+    font-size: 13px;
+    padding: 7px 18px;
+}
+
+.order-card-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.order-meta-item {
+    padding: 16px 20px;
+    border-right: 1px solid var(--border);
+}
+
+.order-meta-item:last-child { border-right: none; }
+
+.meta-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.order-card-footer {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ─── Order Detail ───────────────────────────── */
+.order-detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.order-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.order-detail-header h5 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.order-detail-header p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Order Progress */
+.order-progress {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    padding: 20px;
+    background: var(--light);
+    border-radius: 14px;
+}
+
+.order-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.step-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--border);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.order-step.done .step-dot {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.order-step.current .step-dot {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--dark);
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.25);
+}
+
+.step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.order-step.done .step-label,
+.order-step.current .step-label {
+    color: var(--dark);
+}
+
+.step-line {
+    flex: none;
+    width: 40px;
+    height: 2px;
+    background: var(--border);
+    margin-bottom: 24px;
+    transition: background 0.3s;
+}
+
+.step-line.done {
+    background: var(--primary);
+}
+
+/* Order Items */
+.order-item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.order-item-row:last-child { border-bottom: none; }
+
+.order-item-img {
+    width: 70px;
+    height: 86px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--light);
+}
+
+.order-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order-item-info { flex: 1; }
+
+.order-item-name a {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.order-item-name a:hover { color: var(--primary); }
+
+.order-item-variants {
+    display: flex;
+    gap: 8px;
+    margin: 4px 0;
+}
+
+.order-item-variants span {
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--light);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.order-item-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Summary Card */
+.order-summary-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.order-summary-card h6 {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.total-line {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+    padding-top: 10px;
+    margin-top: 6px;
+    border-top: 1px solid var(--border);
+    margin-bottom: 0;
+}
+
+.payment-badge {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--light);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.shipping-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Empty State */
+.orders-empty-state {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    color: var(--border);
+    margin-bottom: 20px;
+}
+
+.orders-empty-state h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.orders-empty-state p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .order-card-body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .order-meta-item:nth-child(2n) { border-right: none; }
+    .order-detail-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .step-line { width: 20px; }
+}
+
+@media (max-width: 480px) {
+    .order-card-body { grid-template-columns: 1fr 1fr; }
+    .orders-filter-tabs { gap: 6px; }
+    .orders-filter-btn { padding: 7px 12px; font-size: 11px; }
+}

@@ -1,0 +1,107 @@
+/* admin/css/dashboard.css — Admin Dashboard Styles */
+
+/* ── Dashboard Stat Cards ─────────────────────── */
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-left: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    right: -20px; top: -20px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(108,52,131,0.05);
+}
+
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.stat-card.orders    { border-color: #6C3483; }
+.stat-card.revenue   { border-color: #D4AF37; }
+.stat-card.customers { border-color: #3498db; }
+.stat-card.products  { border-color: #27ae60; }
+
+.stat-icon {
+    width: 56px; height: 56px; min-width: 56px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.stat-icon.orders    { background: linear-gradient(135deg, #6C3483, #8e44ad); }
+.stat-icon.revenue   { background: linear-gradient(135deg, #c9982a, #D4AF37); }
+.stat-icon.customers { background: linear-gradient(135deg, #2980b9, #3498db); }
+.stat-icon.products  { background: linear-gradient(135deg, #1e8449, #27ae60); }
+
+.stat-info { flex: 1; min-width: 0; }
+.stat-value { font-size: 1.8rem; font-weight: 800; color: #1a0a2e; font-family: 'Playfair Display', serif; line-height: 1.1; }
+.stat-label { font-size: 12.5px; color: #888; font-weight: 500; margin-top: 2px; }
+.stat-change { font-size: 11px; font-weight: 600; margin-top: 4px; }
+.stat-change.up   { color: #27ae60; }
+.stat-change.down { color: #e74c3c; }
+
+/* ── Chart Wrapper ────────────────────────────── */
+.chart-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    margin-bottom: 24px;
+}
+
+.chart-card-title { font-size: 1rem; font-weight: 700; color: #1a0a2e; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+.chart-card-title i { color: #6C3483; }
+
+/* ── Simple CSS Bar Chart ─────────────────────── */
+.bar-chart { display: flex; align-items: flex-end; gap: 10px; height: 140px; padding: 0 8px; }
+.bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+.bar-fill { width: 100%; border-radius: 6px 6px 0 0; background: linear-gradient(to top, #6C3483, #8e44ad); transition: height 1s ease; }
+.bar-label { font-size: 10px; color: #888; text-align: center; }
+.bar-value { font-size: 10px; font-weight: 700; color: #6C3483; }
+
+/* ── Recent Orders Table ──────────────────────── */
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; color: #888; font-weight: 700; padding: 12px 16px; border-bottom: 2px solid #f0f0f0; background: #fafafa; }
+.admin-table td { padding: 14px 16px; font-size: 13px; color: #333; vertical-align: middle; border-bottom: 1px solid #f5f5f5; }
+.admin-table tr:hover td { background: rgba(108,52,131,0.025); }
+
+/* ── Status Badges ────────────────────────────── */
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.status-badge.pending    { background: #fff3e0; color: #e65100; }
+.status-badge.processing { background: #e3f2fd; color: #1565c0; }
+.status-badge.shipped    { background: #e8f5e9; color: #2e7d32; }
+.status-badge.delivered  { background: #f3e5f5; color: #6a1b9a; }
+.status-badge.cancelled  { background: #fce4ec; color: #b71c1c; }
+.status-badge.active     { background: #e8f5e9; color: #2e7d32; }
+.status-badge.inactive   { background: #eeeeee; color: #616161; }
+
+/* ── Top Products List ────────────────────────── */
+.top-product-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.top-product-row:last-child { border-bottom: none; }
+.top-product-rank { width: 24px; height: 24px; border-radius: 6px; background: #6C3483; color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.top-product-img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+.top-product-info { flex: 1; min-width: 0; }
+.top-product-name { font-size: 13px; font-weight: 600; color: #1a0a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.top-product-sales { font-size: 11px; color: #888; }
+.top-product-rev { font-size: 13px; font-weight: 700; color: #6C3483; }
+
+/* ── Activity Feed ────────────────────────────── */
+.activity-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.activity-item:last-child { border-bottom: none; }
+.activity-dot { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: white; }
+.activity-dot.order   { background: #6C3483; }
+.activity-dot.user    { background: #3498db; }
+.activity-dot.product { background: #27ae60; }
+.activity-dot.review  { background: #e67e22; }
+.activity-text { font-size: 13px; color: #444; line-height: 1.5; }
+.activity-time { font-size: 11px; color: #aaa; margin-top: 2px; }

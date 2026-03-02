@@ -1,0 +1,311 @@
+/* ===================================================
+   ACCOUNT.CSS — My Account Page
+   Velvet Vogue Fashion Store
+=================================================== */
+
+.account-section {
+    padding: 60px 0 80px;
+}
+
+/* Stats Row */
+.account-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.acc-stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.acc-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(108,52,131,0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.acc-stat-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.acc-stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Main Grid */
+.account-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* Sidebar */
+.account-sidebar {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 90px;
+}
+
+.account-avatar-box {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.account-avatar-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(212,175,55,0.5);
+}
+
+.account-avatar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.account-avatar-email {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.account-member-since {
+    font-size: 11px;
+    color: rgba(212,175,55,0.8);
+    background: rgba(212,175,55,0.12);
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.account-nav {
+    padding: 12px 0;
+}
+
+.acc-nav-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.acc-nav-btn:hover {
+    background: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.acc-nav-btn.active {
+    background: rgba(108,52,131,0.08);
+    color: var(--primary);
+    font-weight: 600;
+    border-left: 3px solid var(--primary);
+}
+
+.acc-nav-btn.text-danger { color: #e74c3c !important; }
+.acc-nav-btn.text-danger:hover { background: #e74c3c10; }
+
+/* Content Area */
+.account-content {
+    min-width: 0;
+}
+
+.account-tab {
+    display: none;
+}
+
+.account-tab.active {
+    display: block;
+}
+
+/* Account Card */
+.account-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.account-card-header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.account-card-header h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.account-card-header p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.acc-help-text {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 4px;
+}
+
+/* Password Strength */
+.password-strength-bar { margin-top: 10px; }
+.strength-track { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.strength-fill { height: 100%; border-radius: 4px; transition: width 0.3s, background 0.3s; }
+.strength-label { font-size: 11px; font-weight: 600; margin-top: 4px; display: block; }
+
+/* Orders in Account Tab */
+.acc-orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.acc-order-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    background: var(--light);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.acc-order-num strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.acc-order-num span {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.acc-order-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.order-status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Empty State */
+.acc-empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--text-muted);
+}
+
+.acc-empty-state i {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+    opacity: 0.4;
+}
+
+.acc-empty-state h6 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.acc-empty-state p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .account-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+    .account-sidebar {
+        position: static;
+    }
+    .acc-order-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-stats-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .acc-stat-card {
+        padding: 14px;
+    }
+    .acc-stat-value {
+        font-size: 1rem;
+    }
+}
